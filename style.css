@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    text-align: center;
+    padding: 1.3em;
+    background: linear-gradient(135deg, #87cefa, #58a2df);
+    letter-spacing: 2px;
+    border-bottom: 3px solid black;
+}
+
+body{
+    background: #f4f7fb;
+}
+
+
+.main{
+    display: flex;
+    background-color: white;
+    margin: 1.5em 2em;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    
+    /* This says: "animate the 'opacity' and 'transform' properties over 0.5 seconds" */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* The final, visible state */
+.main.loaded {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.current-weather{
+    text-align: center;
+    background: #fafafa;
+    padding: 1em;
+    border-right: 2px solid gray;
+    width: 30%;
+}
+
+input, button{
+    padding: 0.5em;
+    border: none;
+    margin-right: 0.2em;
+    border-radius: 10px;
+}
+
+input{
+    background-color: rgb(190, 190, 190);
+    width: 70%;
+}
+
+label button{
+    margin-right: 0;
+    transition: all 0.3s ease;
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+button:active{
+    transform: translateZ(5px);
+}
+
+.weather-details{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.temperature{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.day{
+    font-weight: bold;
+}
+
+.extra-details{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: #f0f4f8;
+    flex: 1;
+}
+
+.future-forecast{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.future-forecast img{
+    width: 50%;
+    margin: 0.5em 0;
+}
+
+.future-forecast div{
+    text-align: center;
+    padding: 1em;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20%;
+    transition: all 0.3s ease;
+}
+
+.future-forecast div, .highlights div{
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+
+.highlights{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    height: 50%;
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+.highlights div{
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.future-forecast div:hover, .highlights div:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+
+h3{
+    margin-bottom: 0.3em;
+    color: rgb(35, 132, 165);
+}
+
+h2{
+    margin-top: 1em;
+}
+
+@media (max-width: 780px){
+    .main{
+        flex-direction: column;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+
+    input{
+        width: 70%;
+    }
+
+    button{
+        width: 20%;
+    }
+
+    .current-weather{
+        border-right: none;
+        border-bottom: 3px solid gray;
+        width: 100%;
+    }
+
+    .future-forecast{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlights{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlights div{
+        height: 120px;
+    }
+}

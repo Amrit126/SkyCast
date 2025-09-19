@@ -1,6 +1,6 @@
 # Weather Web App
 ## Name: SkyCast
-## Link: [Live Page]()
+## Link: [Live Page](https://sky-cast-beige.vercel.app/)
 
 A simple weather dashboard made using **HTML, CSS and JavaScript**.
 It allows user to find the weather/temperature of their location along 
@@ -32,7 +32,7 @@ upto 5 days.
 
 ## Usage
 1. Type a city name in the search bar.
-2. Press enter or click the search button.
+2. Click the search button.
 3. View the current weather and 5-day forecast.
 
 ## Author
